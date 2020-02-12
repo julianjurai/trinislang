@@ -22,7 +22,7 @@ function formatDictionary() {
     return { slang, definitions };
   });
 
-  console.log(formattedDictionary);
+  return formattedDictionary;
 }
 
 const DICTIONARY = {};
@@ -69,6 +69,5 @@ parseRawDictionary(izaTrini, "....", "izaTrini");
 // console.log(JSON.stringify(DICTIONARY));
 //node ./util/raw_processor.js > raw_dictionary.json
 
-formatDictionary();
-// console.log(formatDictionary());
+// console.log(JSON.stringify(formatDictionary()));
 //node ./util/raw_processor.js > util/formatted_dictionary.js

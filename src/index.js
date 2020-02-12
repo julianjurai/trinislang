@@ -10,7 +10,7 @@ class TriniLingo {
     this.cachedSelectedWordOption =
       dictionary[Math.floor(Math.random() * dictionary.length)];
     this.fuseInstance = new Fuse(dictionary, {
-      keys: ["slang", "definition"],
+      keys: ["slang", "definitions"],
       shouldSort: true
     });
 
@@ -23,7 +23,7 @@ class TriniLingo {
   }
 
   search(e) {
-    const results = this.fuseInstance.search(e.target.value).slice(0, 11);
+    const results = this.fuseInstance.search(e.target.value).slice(0, 6);
     this.searcResults.innerHTML = "";
 
     results.map(option => {
@@ -64,8 +64,14 @@ class TriniLingo {
       : this.selectedWordContainer.classList.add("selected");
 
     this.selectedWordContainer.innerHTML = `
-      <h1>${selectedOption.slang}s</h1>
-      <div>${selectedOption.definition}</div>
+      <h1>${selectedOption.slang}</h1>
+      <div>${
+        selectedOption.definitions.length > 1
+          ? `<ul>${selectedOption.definitions
+              .map(def => `<li class="definition">${def}</li>`)
+              .join("")}</ul>`
+          : selectedOption.definitions[0]
+      }</div>
     `;
   }
 }
