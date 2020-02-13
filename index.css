@@ -281,6 +281,7 @@ body {
   background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjgwMCIgaGVpZ2h0PSI0MDAiIHZpZXdCb3g9IjAgMCAzMCAxNSI+PHJlY3QgZmlsbD0iI2RhMWEzNSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjE1Ii8+PHBvbHlnb24gZmlsbD0iI0ZGRiIgcG9pbnRzPSIwLDAgMjAuODI1LDE1IDMwLDE1IDkuMTc1LDAiLz48cG9seWdvbiBwb2ludHM9IjEuNTI5LDAgMjIuMzU0LDE1IDI4LjQ3MSwxNSA3LjY0NiwwIi8+PC9zdmc+DQo=")
     no-repeat;
   background-size: cover;
+  background-color: #d91c35;
 }
 /* CLOUDS END */
 
