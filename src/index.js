@@ -3,10 +3,11 @@ import dictionary from "./dictionary";
 
 class TriniLingo {
   constructor() {
+    this.clouds = document.getElementById("Clouds");
     this.searchInput = document.getElementById("search-input");
     this.searcResults = document.getElementById("search-results");
     this.selectedWordContainer = document.getElementById("selected-word");
-    this.searcResults.classList.add("no-content");
+    this.searcResults.classList.add("hide-content");
     this.cachedSelectedWordOption =
       dictionary[Math.floor(Math.random() * dictionary.length)];
     this.fuseInstance = new Fuse(dictionary, {
@@ -20,6 +21,15 @@ class TriniLingo {
     this.selectResult.bind(this);
     this.setSelectedWord(null);
     this.setPlaceholder();
+    this.addClouds(10);
+  }
+
+  addClouds(n) {
+    const node = document.createElement("div");
+    node.classList.add("Cloud", "Foreground");
+    for (let i = 0; i < n; i++) {
+      this.clouds.appendChild(node.cloneNode());
+    }
   }
 
   search(e) {
@@ -36,10 +46,14 @@ class TriniLingo {
     });
 
     if (results.length > 0) {
-      this.searcResults.classList.remove("no-content");
-    } else {
-      this.searcResults.classList.add("no-content");
+      this.searcResults.classList.remove("hide-content");
     }
+
+    const div = document.createElement("div");
+    div.classList.add("missing-content");
+    div.innerHTML =
+      "Missing something ? <a target='_blank' href='https://docs.google.com/spreadsheets/d/1VNuuWznFX5iBhD5m7nYAQsekWUIBbgIz9I3aBXc7bow/edit?usp=sharing'>Add it here</a>";
+    this.searcResults.appendChild(div);
   }
 
   setPlaceholder() {
@@ -50,7 +64,7 @@ class TriniLingo {
   selectResult(option) {
     this.searchInput.value = option.slang;
     this.setSelectedWord(option);
-    this.searcResults.classList.add("no-content");
+    this.searcResults.classList.add("hide-content");
   }
 
   setSelectedWord(dictionaryOption = null) {

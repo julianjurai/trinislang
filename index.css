@@ -307,6 +307,7 @@ body {
   position: relative;
   width: 50%;
   z-index: 10;
+  white-space: pre-line;
 }
 
 #selected-word.selected {
@@ -343,6 +344,7 @@ input {
   border-radius: 21px;
   width: 100%;
   border: 2px solid black;
+  margin-bottom: 40px;
 }
 
 input::placeholder {
@@ -350,8 +352,8 @@ input::placeholder {
 }
 
 input:focus {
-  outline: none;
-  border-bottom: 1px solid #28a2a2;
+  outline-color: transparent;
+  outline-style: none;
 }
 
 #input-container {
@@ -375,7 +377,7 @@ input:focus {
   box-shadow: 0 8px 6px -6px black;
   color: lightslategray;
   left: 0;
-  min-height: 100px;
+  min-height: max-content;
   min-width: 15em;
   padding: 10px 20px;
   position: absolute;
@@ -397,7 +399,7 @@ input:focus {
   border-bottom: 1px solid black;
 }
 
-.no-content {
+.hide-content {
   display: none;
 }
 
@@ -410,14 +412,13 @@ input:focus {
   }
 }
 
-.footer {
-  position: fixed;
-  bottom: 5px;
-  left: 5px;
+.missing-content {
+  padding-top: 5px;
+  font-style: italic;
+  text-align: center;
 }
-
-.footer a {
-  color: #2be1f5;
+.missing-content a {
+  color: #247ae6;
   text-decoration: none;
   font-weight: bold;
 }
