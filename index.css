@@ -303,19 +303,21 @@ body {
   font-family: Times, "Times New Roman";
   margin: 50px auto;
   padding: 0.75rem 1.25rem;
-  padding: 10px 20px 20px 20px;
   position: relative;
   width: 50%;
   z-index: 10;
   white-space: pre-line;
 }
 
-#selected-word.selected {
-  background-color: #fff6d4 !important;
+#selected-word ul {
+  margin: 0;
+}
+#selected-word h1 {
+  margin: 0;
 }
 
-.definition {
-  margin: 15px 0;
+#selected-word.selected {
+  background-color: #fff6d4 !important;
 }
 
 p.input-container {

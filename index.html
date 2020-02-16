@@ -44,10 +44,13 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
-      gtag("config", "UA-158284295-1", {
-        user_id: new Date().getMilliseconds()
-      });
+      fetch("https://ipinfo.io/?token=09f0ca2757cf03")
+        .then(r => r.json())
+        .then((obj = {}) => {
+          gtag("config", "UA-158284295-1", {
+            user_id: obj.ip || new Date().getMilliseconds()
+          });
+        });
     </script>
   </head>
 
