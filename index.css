@@ -316,6 +316,10 @@ body {
   margin: 0;
 }
 
+.definition {
+  margin-bottom: 10px;
+}
+
 #selected-word.selected {
   background-color: #fff6d4 !important;
 }

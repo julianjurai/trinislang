@@ -2704,8 +2704,8 @@ export default [
   {
     slang: "Pong",
     definitions: [
-      "Pound.",
-      "Pound, to have sex with / pound e.g. 'Gih meh two pongs of tomatoes dey tantie.'."
+      "Pound, pound e.g. 'Gih meh two pongs of tomatoes dey tantie.'",
+      "Pound, to have sex with."
     ]
   },
   {
