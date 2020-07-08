@@ -12,7 +12,7 @@ class TriniLingo {
       dictionary[Math.floor(Math.random() * dictionary.length)];
     this.fuseInstance = new Fuse(dictionary, {
       keys: ["slang", "definitions"],
-      shouldSort: true
+      shouldSort: true,
     });
 
     this.searchInput.onkeyup = this.search.bind(this);
@@ -36,7 +36,7 @@ class TriniLingo {
     const results = this.fuseInstance.search(e.target.value).slice(0, 6);
     this.searcResults.innerHTML = "";
 
-    results.map(option => {
+    results.map((option) => {
       const div = document.createElement("div");
       div.textContent = option.slang;
       div.dataset.option = option;
@@ -52,7 +52,7 @@ class TriniLingo {
     const div = document.createElement("div");
     div.classList.add("missing-content");
     div.innerHTML =
-      "Missing something ? <a target='_blank' href='https://docs.google.com/spreadsheets/d/1VNuuWznFX5iBhD5m7nYAQsekWUIBbgIz9I3aBXc7bow/edit?usp=sharing'>Add it here</a>";
+      "<a target='_blank' href='https://forms.gle/1gyUgyxTQ4o2DjVT6'>Click here if we miss something ?</a>";
     this.searcResults.appendChild(div);
   }
 
@@ -82,7 +82,7 @@ class TriniLingo {
       <div>${
         selectedOption.definitions.length > 1
           ? `<ul>${selectedOption.definitions
-              .map(def => `<li class="definition">${def}</li>`)
+              .map((def) => `<li class="definition">${def}</li>`)
               .join("")}</ul>`
           : selectedOption.definitions[0]
       }</div>
